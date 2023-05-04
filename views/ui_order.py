@@ -1,0 +1,65 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Order_view(object):
+    def setupUi(self, Order_view):
+        Order_view.setObjectName("Order_view")
+        Order_view.resize(338, 158)
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(12)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(Order_view)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.client = QtWidgets.QLabel(Order_view)
+        self.client.setMinimumSize(QtCore.QSize(0, 30))
+        self.client.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.client.setObjectName("client")
+        self.client.setFont(font)
+        self.verticalLayout.addWidget(self.client)
+        self.device = QtWidgets.QLabel(Order_view)
+        self.device.setMinimumSize(QtCore.QSize(0, 30))
+        self.device.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.device.setObjectName("device")
+        self.device.setFont(font)
+        self.verticalLayout.addWidget(self.device)
+        self.order_status = QtWidgets.QLabel(Order_view)
+        self.order_status.setMinimumSize(QtCore.QSize(0, 30))
+        self.order_status.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.order_status.setObjectName("order_status")
+        self.order_status.setFont(font)
+        self.verticalLayout.addWidget(self.order_status)
+        self.order_description = QtWidgets.QLabel(Order_view)
+        self.order_description.setMinimumSize(QtCore.QSize(0, 30))
+        self.order_description.setObjectName("order_description")
+        self.order_description.setFont(font)
+        self.order_description.setWordWrap(True)
+        self.verticalLayout.addWidget(self.order_description)
+        self.pushButton = QtWidgets.QPushButton(Order_view)
+        self.pushButton.setMinimumSize(QtCore.QSize(0, 30))
+        self.pushButton.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.pushButton.setObjectName("pushButton")
+        self.verticalLayout.addWidget(self.pushButton)
+        self.verticalLayout_2.addLayout(self.verticalLayout)
+
+        self.retranslateUi(Order_view)
+        QtCore.QMetaObject.connectSlotsByName(Order_view)
+
+    def retranslateUi(self, Order_view):
+        _translate = QtCore.QCoreApplication.translate
+        Order_view.setWindowTitle(_translate("Order_view", "Order_view"))
+        self.client.setText(_translate("Order_view", "Клиент:"))
+        self.order_status.setText(_translate("Order_view", "Статус:"))
+        self.device.setText(_translate("Order_view", "Устройство:"))
+        self.order_description.setText(_translate("Order_view", "Описание"))
+        self.pushButton.setText(_translate("Order_view", "По умолчанию"))
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Order_view = QtWidgets.QWidget()
+    ui = Ui_Order_view()
+    ui.setupUi(Order_view)
+    Order_view.show()
+    sys.exit(app.exec_())
